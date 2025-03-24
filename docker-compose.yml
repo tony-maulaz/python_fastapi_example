@@ -1,0 +1,18 @@
+services:
+  node:
+    build: .
+    container_name: fastapi
+    volumes:
+      - ./code:/code
+    
+    tty: true
+    stdin_open: true
+    
+    restart: "no"
+
+    working_dir: /code
+    command: ["bash"]
+
+    ports:
+      - 3000:3000
+
